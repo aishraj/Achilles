@@ -7,6 +7,13 @@
     <groupId>org.ge3k.achilles</groupId>
     <artifactId>achilles-core</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>net.sf.jtidy</groupId>
+            <artifactId>jtidy</artifactId>
+            <version>r938</version>
+        </dependency>
+    </dependencies>
 
 
 </project>

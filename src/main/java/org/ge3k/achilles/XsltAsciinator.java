@@ -1,6 +1,7 @@
 package org.ge3k.achilles;
 
 import org.ge3k.achilles.Asciinator;
+import org.w3c.tidy.Tidy;
 
 import javax.xml.transform.*;
 import javax.xml.transform.stream.StreamResult;
@@ -14,6 +15,12 @@ import java.io.StringWriter;
  */
 public class XsltAsciinator implements Asciinator {
 
+    Tidy tidy;
+
+    XsltAsciinator() {
+        tidy = new Tidy();
+    }
+
     @Override
     public String htmlFileToTextString(File file) throws TransformerException {
         return null;
@@ -26,6 +33,8 @@ public class XsltAsciinator implements Asciinator {
 
     @Override
     public String htmlStringToTextString(String s) throws TransformerException {
+        /**TODO: check if the xhtml is well formed using jtidy **/
+
         File xsltFile = new File("src/main/resources/markdown.xsl");
 
         Source xmlSource = new StreamSource(new StringReader(s));
