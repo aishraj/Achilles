@@ -6,9 +6,8 @@ import org.w3c.tidy.Tidy;
 import javax.xml.transform.*;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
-import java.io.File;
-import java.io.StringReader;
-import java.io.StringWriter;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Created by ge3k on 22/4/14.
@@ -36,7 +35,11 @@ public class XsltAsciinator implements Asciinator {
         /**TODO: check if the xhtml is well formed using jtidy **/
 
         File xsltFile = new File("src/main/resources/markdown.xsl");
-
+        InputStream stream = new ByteArrayInputStream(s.getBytes(StandardCharsets.UTF_8));
+        ByteArrayOutputStream parsedStringStream = new ByteArrayOutputStream();
+        tidy.setXHTML(true);
+        tidy.parse(stream,parsedStringStream);
+        s = parsedStringStream.toString();
         Source xmlSource = new StreamSource(new StringReader(s));
         Source xsltSource = new StreamSource(xsltFile);
 

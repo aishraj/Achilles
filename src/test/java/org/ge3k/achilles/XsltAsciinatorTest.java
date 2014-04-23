@@ -12,8 +12,8 @@ public class XsltAsciinatorTest {
     @org.junit.Test
     public void testHtmlStringToTextString() throws Exception {
         Asciinator asciinator = new XsltAsciinator();
-        String content = new Scanner(new File("/home/ge3k/projects/Achilles/src/test/resources/SimpleFile.xhtml")).useDelimiter("\\Z").next();
+        String content = "<h1>" + "Hello, world" + "</h1>";
         String mdString = asciinator.htmlStringToTextString(content);
-        Assert.assertEquals(" # Hello world",mdString);
+        Assert.assertEquals("#Hello, world",mdString);
     }
 }
