@@ -12,6 +12,8 @@ import java.nio.charset.StandardCharsets;
 /**
  * Created by ge3k on 22/4/14.
  */
+
+//TODO: Mark this implementation as deprecated, then switch to a JSoup based one.
 public class XsltAsciinator implements Asciinator {
 
     Tidy tidy;
@@ -32,7 +34,6 @@ public class XsltAsciinator implements Asciinator {
 
     @Override
     public String htmlStringToTextString(String s) throws TransformerException {
-        /**TODO: check if the xhtml is well formed using jtidy **/
 
         File xsltFile = new File("src/main/resources/markdown.xsl");
         InputStream stream = new ByteArrayInputStream(s.getBytes(StandardCharsets.UTF_8));
