@@ -7,7 +7,7 @@ import java.io.File;
 /**
  * Created by ge3k on 22/4/14.
  */
-public interface Asciinator {
+public interface WebText {
 
     public String htmlFileToTextString(File file) throws TransformerException;
 

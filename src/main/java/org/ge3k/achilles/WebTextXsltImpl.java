@@ -1,9 +1,11 @@
 package org.ge3k.achilles;
 
-import org.ge3k.achilles.Asciinator;
 import org.w3c.tidy.Tidy;
 
-import javax.xml.transform.*;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import java.io.*;
@@ -14,11 +16,11 @@ import java.nio.charset.StandardCharsets;
  */
 
 //TODO: Mark this implementation as deprecated, then switch to a JSoup based one.
-public class XsltAsciinator implements Asciinator {
+public class WebTextXsltImpl implements WebText {
 
     Tidy tidy;
 
-    XsltAsciinator() {
+    WebTextXsltImpl() {
         tidy = new Tidy();
     }
 
