@@ -15,7 +15,7 @@ import java.nio.charset.StandardCharsets;
  * Created by ge3k on 22/4/14.
  */
 
-//TODO: Mark this implementation as deprecated, then switch to a JSoup based one.
+@Deprecated
 public class WebTextXsltImpl implements WebText {
 
     Tidy tidy;
@@ -24,15 +24,6 @@ public class WebTextXsltImpl implements WebText {
         tidy = new Tidy();
     }
 
-    @Override
-    public String htmlFileToTextString(File file) throws TransformerException {
-        return null;
-    }
-
-    @Override
-    public File htmlFileToMarkdownfile(File file) {
-        return null;
-    }
 
     @Override
     public String htmlStringToTextString(String s) throws TransformerException {
