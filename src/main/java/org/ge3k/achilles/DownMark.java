@@ -10,15 +10,15 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Created by ge3k on 4/5/14.
  */
-public class TextifyConverter {
+public class DownMark {
 
-    private final DocumentConverter documentConverter;
+    private final HtmlConverter htmlConverter;
     private Cleaner documentCleaner;
-    private final Lock textConvertLock;
+    private final Lock downMarkLock;
 
-    public TextifyConverter() {
-        textConvertLock = new ReentrantLock();
-        documentConverter = new DocumentConverter();
+    public DownMark() {
+        downMarkLock = new ReentrantLock();
+        htmlConverter = new HtmlConverter();
     }
 
     public Cleaner getDocumentCleaner() {
@@ -33,11 +33,12 @@ public class TextifyConverter {
         String convertedString = null;
         Document document = Jsoup.parseBodyFragment(html);
         document = documentCleaner.clean(document);
-        textConvertLock.lock();
+        downMarkLock.lock();
         try {
-            convertedString = documentConverter.convert(document);
+            convertedString = htmlConverter.convert(document);
         } finally {
-           textConvertLock.unlock();
+           downMarkLock.unlock();
         }
+        return convertedString;
     }
 }
