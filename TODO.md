@@ -1,8 +1,8 @@
 ## Things to be done 
 
-- The API should accept a file or a string. Use JSoup to validate the file or the string.
+- The API should accept a file or a string. Use JSoup to validate the file or the string. 
 
--  For converting HTML items like tables, classes, images or divs, take a look at how MarkDown generates these. Reverse engineering the maximum possible functionality is our goal.
+-  For converting HTML items like tables, classes, images or divs, take a look at how MarkDown generates these. Reverse engineering the maximum possible functionality is our goal. [DONE/IN PROGRESS]
 
 - Workplan is : HTML File => Cleaned up representation with known tags => Intermediate representation => Markdown file.
 
