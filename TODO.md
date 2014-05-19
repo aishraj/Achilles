@@ -1,4 +1,6 @@
-## Things to be done 
+## Things to be done
+
+- Switch over to using idiomatic Java 8. Even though this shall slow down development as there's a certain learning curve involved, I'm going with Java 8.
 
 - The API should accept a file or a string. Use JSoup to validate the file or the string. 
 

@@ -22,9 +22,9 @@ public class WebTextImpl implements WebText {
 
     @Override
     public String htmlStringToTextString(String html) throws TransformerException {
-        DownMark downMark = new DownMark();
+        ConversionHelper conversionHelper = new ConversionHelper();
         Cleaner cleaner = new Cleaner(mwhiteList);
-        downMark.setDocumentCleaner(cleaner);
-        return downMark.convert(html);
+        conversionHelper.setDocumentCleaner(cleaner);
+        return conversionHelper.convert(html);
     }
 }

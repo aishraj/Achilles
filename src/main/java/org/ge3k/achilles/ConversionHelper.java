@@ -10,13 +10,13 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Created by ge3k on 4/5/14.
  */
-public class DownMark {
+public class ConversionHelper {
 
     private final HtmlConverter htmlConverter;
     private Cleaner documentCleaner;
     private final Lock downMarkLock;
 
-    public DownMark() {
+    public ConversionHelper() {
         downMarkLock = new ReentrantLock();
         htmlConverter = new HtmlConverter();
     }

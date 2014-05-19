@@ -3,5 +3,5 @@ package org.ge3k.achilles;
 /**
  * Created by ge3k on 17/5/14.
  */
-public class AnchorElement implements ElementHandler {
+public class AnchorElement extends AbstractElementHandler {
 }
