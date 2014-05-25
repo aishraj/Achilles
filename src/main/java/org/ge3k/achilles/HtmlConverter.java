@@ -34,6 +34,14 @@ public class HtmlConverter {
 
     private MarkDownWriter markDownWriter;
 
+    public MarkDownWriter getMarkDownWriter() {
+        return markDownWriter;
+    }
+
+    public void setMarkDownWriter(MarkDownWriter markDownWriter) {
+        this.markDownWriter = markDownWriter;
+    }
+
     private static final Pattern COMMA = Pattern.compile(",");
     private static final Pattern LINK_MULTIPLE_SPACES = Pattern.compile(" {2,}", Pattern.DOTALL);
     private static final Pattern LINK_SAFE_CHARS = Pattern.compile("[^-\\w \\.]+", Pattern.DOTALL);
@@ -51,8 +59,8 @@ public class HtmlConverter {
     }
 
     private void configureElementHandlers() {
-        addNonLineBreakableNodes(new NonBreakableElements(), NON_BREAKABLE_ELEMENTS);
-        addNonLineBreakableNodes(new NonBreakableCodeElements(), CODE_TT);
+        addNonLineBreakableNodes(new InlineElements(), NON_BREAKABLE_ELEMENTS);
+        addNonLineBreakableNodes(new InlineCodeElement(), CODE_TT);
         addNonLineBreakableNodes(new ImageElement(), IMG);
         addNonLineBreakableNodes(new AnchorElement(), A_HREF);
         addNonLineBreakableNodes(new BreakElement(), BR);
